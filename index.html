@@ -157,22 +157,28 @@
           <h2>SSH</h2>
           <section id="item-ssh-configuration-file">
             <h3>Creating an ssh configuration file</h3>
+            
+            <p>An ssh configuration file can make it easier for you to connect to servers
+              that you access frequently. In one case it also helped me with the VS Code SSH
+              Remote Access Plugin. ssh was not able to find my private ssh key for authentication,
+              so I created an ssh config file in which i specified the key that ssh should use for
+              this connection. 
+            </p>
             <p>Creating an ssh configuration file is just as easy as it sounds.
               The most common place for an ssh to reside is the <code>.ssh</code> directory
-              inside your home directory.</p>
-            <p>Create the file for example with the command <code>touch config</code> 
-            Here's an example of a config file's content:</p>
+              inside your home directory.
+              Create the file for example with the command <code>touch config</code> 
+              Here's an example of a config file's content:</p>
             <pre><code class="html">
               Host &lt;name&gt;
-                HostName &lt;ip adress&gt;
+                HostName &lt;ip-address&gt;
                 User &lt;username&gt;
                 IdentityFile &lt;path&gt;
             </code></pre>
             <p>
-              Where:
               <ul>
                 <li>&lt;name&gt; specifies an name that can be referenced to quickly establish the configured connection, e.g. via <code>ssh name</code></li>
-                <li>&lt;ip adress&gt; specifies the ip adress of the server that you want to connect to</li>
+                <li>&lt;ip-address&gt; specifies the ip adress of the server that you want to connect to</li>
                 <li>&lt;username&gt; specifies as which user the connection should be established</li>
                 <li>&lt;path&gt; specifies the path to the private ssh key that should be used for authentication</li>
               </ul>
