@@ -4,10 +4,9 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-<link href="assets/images/favicon.png" rel="icon" />
-<title>Documentation | Your ThemeForest item Name</title>
-<meta name="description" content="Your ThemeForest item Name and description">
-<meta name="author" content="harnishdesign.net">
+<title>Wiki</title>
+<meta name="description" content="Wiki">
+<meta name="author" content="kroppel">
 
 <!-- Stylesheet
 ============================== -->
@@ -23,7 +22,6 @@
 <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
 </head>
 
-<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
 
 <!-- Preloader -->
 <div class="preloader">
@@ -50,8 +48,8 @@
 		<button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
 		
 		<!-- Logo --> 
-        <a class="logo ml-md-3" href="index.html" title="iDocs Template"> <img src="assets/images/logo-light.png" alt="iDocs Template"/> </a> 
-		<span class="text-2 text-light ml-2">v1.0</span> 
+        <a class="logo ml-md-3" href="index.html" title="Wiki"> </a> 
+		<span class="text-2 text-light ml-2">Wiki by @kroppel</span> 
         <!-- Logo End -->
         
 		<!-- Navbar Toggler -->
@@ -97,14 +95,13 @@
 	============================ -->
 	<div class="idocs-navigation bg-light">
       <ul class="nav flex-column ">
-        <li class="nav-item"><a class="nav-link active" href="#idocs_start">Getting Started</a>
+        <li class="nav-item"><a class="nav-link active" href="#item-ssh">SSH</a>
           <ul class="nav flex-column">
-            <li class="nav-item"><a class="nav-link" href="#idocs_installation">Installation</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_html_structure">HTML Structure</a></li>
+            <li class="nav-item"><a class="nav-link" href="#item-ssh-configuration-file">Creating an ssh configuration file</a></li>
             <li class="nav-item"><a class="nav-link" href="#idocs_sass">Sass</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_color_schemes">Color Schemes</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_theme_customization">Customization</a></li>
-            <li class="nav-item"><a class="nav-link" href="#idocs_logo_settings">Logo Settings</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_color_schemes">Sub-Theme 3</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_theme_customization">Sub-Theme 4</a></li>
+            <li class="nav-item"><a class="nav-link" href="#idocs_logo_settings">Sub-Theme 5</a></li>
           </ul>
         </li>
         <li class="nav-item"><a class="nav-link" href="#idocs_layout">Layout</a>
@@ -178,95 +175,31 @@
         
 		<hr class="divider">
 		
-        <!-- Installation
+        <!-- ssh configuration file
 		============================ -->
-        <section id="idocs_installation">
-          <h2>Installation</h2>
-          <p class="lead">Follow the steps below to setup your site template:</p>
-          <ol>
-            <li>Unzip the downloaded package and open the <strong>/HTML</strong> folder to find all the template files. You will need to upload these files to your hosting web server using FTP or localhost in order to use it on your website.</li>
-            <li>Below is the folder structure and needs to be uploaded to your website or localhost root directory:
+        <section id="item-ssh-configuration-file">
+          <h2>Creating an ssh configuration file</h2>
+          <p>Creating an ssh configuration file is just as easy as it sounds.
+            The most common place for an ssh to reside is the <code>.ssh</code> directory
+            inside your home directory.</p>
+          <p>Create the file for example with the command <code>mkdir config</code>
+          Here's an example of a config file's content:</p>
+          <pre><code class="html">
+            Host &lt;name&gt;
+              HostName &lt;ip adress&gt;
+              User &lt;username&gt;
+              IdentityFile &lt;path&gt;
+          </code></pre>
+          <p>
+            Where:
             <ul>
-			<li><code>HTML/assets</code> - Contains all of the assets referenced
-			  <ul>
-                <li><code>HTML/css</code> - Stylesheet files</li>
-                <li><code>HTML/images</code> - Images files</li>
-                <li><code>HTML/js</code> - Javacript files</li>
-                <li><code>HTML/sass</code> - Sass files</li>
-                <li><code>HTML/vendor</code> – All external libs.</li>
-              </ul>
-			</li>
-			<li><code>HTML/index.html</code> - Homepage
-			</ul>
-            </li>
-            <li>You should upload all or specific HTML files as per your need.</li>
-            <li>You are good to go for adding your content now!</li>
-          </ol>
-        </section>
-        
-		<hr class="divider">
-		
-        <!-- HTML Structure
-		============================ -->
-        <section id="idocs_html_structure">
-          <h2>HTML Structure</h2>
-          <p>iDocs follows a simple and easy to customize coding structure. Here is the sample for your reference:<br>
-            The template is based on <a class="ml-1" target="_blank" href="https://getbootstrap.com/"><i class="fas fa-external-link-alt"></i> Bootstrap Framework</a></p>
-          <pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
+              <li>&lt;name&gt; specifies an name that can be referenced to quickly establish the configured connection, e.g. via <code>ssh name</code></li>
+              <li>&lt;ip adress&gt; specifies the ip adress of the server that you want to connect to</li>
+              <li>&lt;username&gt; specifies as which user the connection should be established</li>
+              <li>&lt;path&gt; specifies the path to the private ssh key that should be used for authentication</li>
+            </ul>
 
-&lt;!-- Your Title, Description, Stylesheets
-============================================= --&gt;
-
-&lt;/head&gt;
-
-&lt;body data-spy=&quot;scroll&quot; data-target=&quot;.idocs-navigation&quot; data-offset=&quot;125&quot;&gt;
-
-&lt;!-- Document Wrapper   
-=============================== --&gt;
-&lt;div id=&quot;main-wrapper&quot;&gt; 
-  
-  &lt;!-- Header
-  ============================ --&gt;
-  &lt;header id=&quot;header&quot; class=&quot;sticky-top&quot;&gt;
-   ......
-  &lt;/header&gt;
-  &lt;!-- Header End --&gt; 
-  
-  &lt;!-- Content
-  ============================ --&gt;
-  &lt;div id=&quot;content&quot; role=&quot;main&quot;&gt; 
-    
-    &lt;!-- Sidebar Navigation
-    ============================ --&gt;
-    &lt;div class=&quot;idocs-navigation bg-light&quot;&gt;
-     .....
-    &lt;/div&gt;
-    
-    &lt;!-- Docs Content
-    ============================ --&gt;
-    &lt;div class=&quot;idocs-content&quot;&gt;
-      &lt;div class=&quot;container&quot;&gt;
-        .......
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;!-- Content end --&gt; 
-  
-  &lt;!-- Footer --&gt;
-  &lt;footer id=&quot;footer&quot; class=&quot;section bg-dark footer-text-light&quot;&gt;
-    &lt;div class=&quot;container&quot;&gt; ...... &lt;/div&gt;
-  &lt;/footer&gt;
-  &lt;!-- Footer end --&gt; 
-  
-&lt;/div&gt;
-&lt;!-- Document Wrapper end --&gt; 
-
-&lt;!-- JavaScript --&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-          <p class="alert alert-info">If you need more information, please visit bootstrap site: <a target="_blank" href="https://getbootstrap.com/docs/4.4/layout/grid/">https://getbootstrap.com</a></p>
+          </p>
         </section>
         
 		<hr class="divider">
