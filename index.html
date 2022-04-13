@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-<title>Wiki</title>
-<meta name="description" content="Wiki">
-<meta name="author" content="kroppel">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+  <title>Wiki</title>
+  <meta name="description" content="Wiki">
+  <meta name="author" content="kroppel">
 
-<!-- Stylesheet
-============================== -->
-<!-- Bootstrap -->
-<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
-<!-- Font Awesome Icon -->
-<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
-<!-- Magnific Popup -->
-<link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
-<!-- Highlight Syntax -->
-<link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
-<!-- Custom Stylesheet -->
-<link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+  <!-- Stylesheet
+  ============================== -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <!-- Font Awesome Icon -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+  <!-- Highlight Syntax -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+  <!-- Elasticlunr client side search engine-->
+  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="elasticlunr.js" src="elasticlunr.js/lib/elasticlunr.js"></script>
+  <!-- Build Search index -->
+  <script type="module" src="index.js"></script>
 </head>
 
 
@@ -49,31 +53,20 @@
 		
 		<!-- Logo --> 
         <a class="logo ml-md-3" href="index.html" title="Wiki"> </a> 
-		<span class="text-2 text-light ml-2">Wiki by @kroppel</span> 
+		<span class="text-white"> Wiki by @kroppel</span> 
         <!-- Logo End -->
         
 		<!-- Navbar Toggler -->
 		<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#header-nav"><span></span><span></span><span></span></button>
-        
+    
+    
 		<div id="header-nav" class="collapse navbar-collapse justify-content-end">
           <ul class="navbar-nav">
-            <li class="dropdown"> <a class="dropdown-toggle" href="#">Dropdown</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#">Dropdown Action</a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="index.html">Action</a></li>
-                    <li><a class="dropdown-item" href="feature-header-dark.html">Another Action</a></li>
-                    <li><a class="dropdown-item" href="feature-header-primary.html">Something Else Here</a></li>
-                    <li><a class="dropdown-item" href="index-2.html">Another Link</a></li>
-                  </ul>
-                </li>
-                <li><a class="dropdown-item" href="#">Another Action</a>
-                <li><a class="dropdown-item" href="#">Something Else Here</a></li>
-              </ul>
-            </li>
-            <li><a target="_blank" href="https://themeforest.net/user/harnishdesign/portfolio?ref=HarnishDesign">Other Template</a></li>
-            <li><a target="_blank" href="https://themeforest.net/user/harnishdesign/#contact?ref=HarnishDesign">Support</a></li>
+            <script src="main.js"></script>
+            <div class="input-group">
+              <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+              <button type="button" class="btn btn-outline-primary" onclick="search()">search</button>
+            </div>
           </ul>
         </div>
       </div>
@@ -167,7 +160,7 @@
             <p>Creating an ssh configuration file is just as easy as it sounds.
               The most common place for an ssh to reside is the <code>.ssh</code> directory
               inside your home directory.
-              Create the file for example with the command <code>touch config</code> 
+              Create the file for example with the command <code>touch config</code>.
               Here's an example of a config file's content:</p>
             <pre><code class="html">
               Host &lt;name&gt;
