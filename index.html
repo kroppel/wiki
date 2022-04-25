@@ -76,6 +76,11 @@
             <li class="nav-item"><a class="nav-link" href="#item-ssh-configuration-file">Creating an ssh configuration file</a></li>
           </ul>
         </li>
+        <li class="nav-item"><a class="nav-link active" href="#item-git">Git</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#item-github-access-token">Github authentication via access token</a></li>
+          </ul>
+        </li>
         <li class="nav-item"><a class="nav-link active" href="#item-bios">BIOS</a>
           <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link" href="#item-usb-boot-option">Booting from an USB device</a></li>
@@ -132,6 +137,22 @@
         </section>
 
         <!-- Topic 2 ============================ -->
+
+        <section id="item-git">
+          <H2>Git</H2>
+          <section id="item-github-access-token">
+            <H3>Github authentication via access token</H3>
+            <p>
+              A github access token can be created under "Settings" -> "Developer settings" -> "Personal access token".
+            </p>
+            <p>
+              To execute a push, simply use the following template:
+              <code>git push https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git</code>
+            </p>
+          </section>
+        </section>
+
+        <!-- Topic 3 ============================ -->
 
         <section id="item-bios">
           <H2>BIOS</H2>
